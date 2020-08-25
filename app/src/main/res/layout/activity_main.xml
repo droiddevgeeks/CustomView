@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Hello Custom Views" />
+
+        <com.example.customview.EmotionalFaceView
+            android:id="@+id/emotionalFaceView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/textView"
+            android:layout_centerInParent="true" />
+
+        <com.example.customview.EmotionalFaceView
+            android:id="@+id/happyButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            app:borderColor="@android:color/white"
+            app:eyesColor="@android:color/white"
+            app:faceColor="@android:color/holo_red_dark"
+            app:mouthColor="@android:color/white"
+            app:state="happy" />
+
+        <com.example.customview.EmotionalFaceView
+            android:id="@+id/sadButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            app:borderColor="@android:color/black"
+            app:eyesColor="@android:color/black"
+            app:faceColor="@android:color/darker_gray"
+            app:mouthColor="@android:color/black"
+            app:state="sad" />
+
+        <com.example.customview.CustomLayoutView
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emotionalFaceView"
+            app:custom_component_title="@string/component_one" />
+
+        <com.example.customview.CustomLayoutView
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view1"
+            app:custom_component_title="@string/component_two" />
+
+        <com.example.customview.CustomLayoutView
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view2"
+            app:custom_component_title="@string/component_three" />
+
+        <com.example.customview.ColorOptionView
+            android:id="@+id/colorOptionView1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/view3"
+            android:background="?android:selectableItemBackground"
+            custom:titleText="Background color"
+            custom:valueColor="@android:color/holo_green_light" />
+
+        <com.example.customview.ColorOptionView
+            android:id="@+id/colorOptionView2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/colorOptionView1"
+            android:background="?android:selectableItemBackground"
+            custom:titleText="Foreground color"
+            custom:valueColor="@android:color/holo_orange_dark" />
+
+        <com.example.customview.RainDropView
+            android:id="@+id/rain_drop_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/colorOptionView2"
+            android:background="#8DF" />
+
+        <com.example.customview.CustomFanControllerView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/rain_drop_view"
+            android:layout_marginTop="10dp"
+            app:fanOffColor="@color/gray1"
+            app:fanOnColor="@color/cyan1" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
